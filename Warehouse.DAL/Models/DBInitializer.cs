@@ -13,13 +13,7 @@ namespace Warehouse.DAL.Models
         {
             context.Database.EnsureCreated();
 
-            context.AddRange(
-                new Role { Name = "Admin" },
-                new Role { Name = "Customer" },
-                new Role { Name = "Warehouse" }
-                );
-
-            context.AddRange(
+            /*context.AddRange(
                 new Country { Name = "Belgium", MaxWeight = 44000 },
                 new Country { Name = "France", MaxWeight = 40000 },
                 new Country { Name = "Germany", MaxWeight = 44000 }
@@ -51,14 +45,14 @@ namespace Warehouse.DAL.Models
             context.Add(address3);
 
             context.AddRange(
-                new User { UserName = "Stef Vanbroekhoven", Email = "stef.vanbroekhoven@admin.com", Password = "Test", AddressId = 1, RoleId = 1 },
-                new User { UserName = "Borealis", Email = "borealis@customer.com", Password = "Test", AddressId = 2, RoleId = 2 },
-                new User { UserName = "Luc", Email = "luc@warehouse.com", Password = "Test", AddressId = 3, RoleId = 3 }
+                new User { UserName = "Stef Vanbroekhoven", Email = "stef.vanbroekhoven@admin.com", Password = "Test", AddressId = 1 },
+                new User { UserName = "Borealis", Email = "borealis@customer.com", Password = "Test", AddressId = 2 },
+                new User { UserName = "Luc", Email = "luc@warehouse.com", Password = "Test", AddressId = 3 }
                 );
 
             context.AddRange(
-                new Product { Name = "FORMOLENE", UserId = 8 },
-                new Product { Name = "BORMED", UserId = 8 }
+                new Item { Name = "FORMOLENE" },
+                new Item { Name = "BORMED" }
                 );
 
             Packaging packaging = new Packaging()
@@ -76,23 +70,18 @@ namespace Warehouse.DAL.Models
             context.Add(packaging2);
 
             context.AddRange(
-                new ProductPackaging { ProductId = 4, PackagingId = 1 },
-                new ProductPackaging { ProductId = 5, PackagingId = 2 }
+                new Product { ItemId = 1, UserId = 2, PackagingId = 1, AmountInStock = 25 },
+                new Product { ItemId = 2, UserId = 2, PackagingId = 2, AmountInStock = 30 }
                 );
 
             context.AddRange(
-                new Stock { ProductId = 1, UserId = 2, PackagingId = 1, Amount = 25 },
-                new Stock { ProductId = 2, UserId = 2, PackagingId = 2, Amount = 30 }
+                new Order { UserId = 2, AddressId = 3, Confirm = false, InOut = false, OrderPlaced = DateTime.Now }
                 );
 
             context.AddRange(
-                new Order { UserId = 2, AddressId = 3, TotalWeight = 20000, Confirm = false, InOut = false, OrderPlaced = DateTime.Now }
+                new OrderLine { OrderId = 1, ProductId = 2, Amount = 20 }
                 );
-
-            context.AddRange(
-                new OrderLine { OrderId = 1, StockId = 2, Amount = 20, TotalWeight = 20000 }
-                );
-
+*/
             context.SaveChanges();
         }
     }

@@ -10,7 +10,7 @@ namespace Warehouse.DAL.Models
         public int Id { get; set; }
         public string Type { get; set; }
         public int Weight { get; set; }
-        public ICollection<ProductPackaging> ProductPackagings { get; set; }
-        public ICollection<Stock> Stocks { get; set; }
+
+        public ICollection<Product> Products { get; set; }
     }
 }

@@ -13,9 +13,7 @@ namespace Warehouse.DAL.Models
         public string City { get; set; }
         public int CountryId { get; set; }
 
-        [ForeignKey("CountryId")]
         public Country Country { get; set; }
-        public ICollection<User> Users { get; set; }
         public ICollection<Order> Orders { get; set; }
     }
 }
