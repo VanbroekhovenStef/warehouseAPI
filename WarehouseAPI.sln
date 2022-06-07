@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseAPI", "WarehouseAPI\WarehouseAPI.csproj", "{9EAC9380-954C-4F36-9248-5918A2064715}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warehouse.DAL", "Warehouse.DAL\Warehouse.DAL.csproj", "{EEABDE51-E6D8-4F78-8426-07ABCFD7641F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9EAC9380-954C-4F36-9248-5918A2064715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EAC9380-954C-4F36-9248-5918A2064715}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EAC9380-954C-4F36-9248-5918A2064715}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EAC9380-954C-4F36-9248-5918A2064715}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEABDE51-E6D8-4F78-8426-07ABCFD7641F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEABDE51-E6D8-4F78-8426-07ABCFD7641F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEABDE51-E6D8-4F78-8426-07ABCFD7641F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEABDE51-E6D8-4F78-8426-07ABCFD7641F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B19A509-7007-4B6B-8534-37655806032C}
+	EndGlobalSection
+EndGlobal

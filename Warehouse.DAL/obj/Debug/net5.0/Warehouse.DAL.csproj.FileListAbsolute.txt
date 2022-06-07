@@ -1,0 +1,15 @@
+C:\tmp\Angular\WarehouseAPI\Warehouse.DAL\bin\Debug\net5.0\Warehouse.DAL.deps.json
+C:\tmp\Angular\WarehouseAPI\Warehouse.DAL\bin\Debug\net5.0\Warehouse.DAL.runtimeconfig.json
+C:\tmp\Angular\WarehouseAPI\Warehouse.DAL\bin\Debug\net5.0\Warehouse.DAL.runtimeconfig.dev.json
+C:\tmp\Angular\WarehouseAPI\Warehouse.DAL\bin\Debug\net5.0\Warehouse.DAL.dll
+C:\tmp\Angular\WarehouseAPI\Warehouse.DAL\bin\Debug\net5.0\ref\Warehouse.DAL.dll
+C:\tmp\Angular\WarehouseAPI\Warehouse.DAL\bin\Debug\net5.0\Warehouse.DAL.pdb
+C:\tmp\Angular\WarehouseAPI\Warehouse.DAL\obj\Debug\net5.0\Warehouse.DAL.csproj.AssemblyReference.cache
+C:\tmp\Angular\WarehouseAPI\Warehouse.DAL\obj\Debug\net5.0\Warehouse.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\tmp\Angular\WarehouseAPI\Warehouse.DAL\obj\Debug\net5.0\Warehouse.DAL.AssemblyInfoInputs.cache
+C:\tmp\Angular\WarehouseAPI\Warehouse.DAL\obj\Debug\net5.0\Warehouse.DAL.AssemblyInfo.cs
+C:\tmp\Angular\WarehouseAPI\Warehouse.DAL\obj\Debug\net5.0\Warehouse.DAL.csproj.CoreCompileInputs.cache
+C:\tmp\Angular\WarehouseAPI\Warehouse.DAL\obj\Debug\net5.0\Warehouse.DAL.dll
+C:\tmp\Angular\WarehouseAPI\Warehouse.DAL\obj\Debug\net5.0\ref\Warehouse.DAL.dll
+C:\tmp\Angular\WarehouseAPI\Warehouse.DAL\obj\Debug\net5.0\Warehouse.DAL.pdb
+C:\tmp\Angular\WarehouseAPI\Warehouse.DAL\obj\Debug\net5.0\Warehouse.DAL.genruntimeconfig.cache
