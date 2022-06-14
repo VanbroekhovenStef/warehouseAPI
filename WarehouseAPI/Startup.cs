@@ -39,9 +39,10 @@ namespace WarehouseAPI
             services.AddDbContext<WarehouseContext>(opt =>
                 opt.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddControllers().AddJsonOptions(x =>
-                x.JsonSerializerOptions.ReferenceHandler = 
-                    ReferenceHandler.Preserve);
+            //Possible circular reference solution
+            services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = null);
+            services.AddControllers().AddNewtonsoftJson(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+            services.AddCors(o => o.AddPolicy("MyCorsPolicy", builder => { builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader(); }));
             services.AddSwaggerGen(c =>
             {
 /*                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WarehouseAPI", Version = "v1" });
@@ -98,6 +99,8 @@ namespace WarehouseAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("MyCorsPolicy");
 
             app.UseAuthentication();
 

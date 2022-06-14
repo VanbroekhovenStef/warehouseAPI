@@ -18,7 +18,6 @@ namespace Warehouse.DAL.Data
         public DbSet<Packaging> Packagings { get; set; }
         public DbSet<Item> Items { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderLine> OrderLines { get; set; }
 
@@ -31,9 +30,8 @@ namespace Warehouse.DAL.Data
             modelBuilder.Entity<Packaging>().ToTable("Packagings");
             modelBuilder.Entity<Item>().ToTable("Items");
             modelBuilder.Entity<User>().ToTable("Users");
-            modelBuilder.Entity<Product>().ToTable("Products");
             modelBuilder.Entity<Order>().ToTable("Orders");
-            modelBuilder.Entity<OrderLine>().ToTable("OrderLines").HasOne(e => e.Product).WithMany().OnDelete(DeleteBehavior.NoAction);
+            modelBuilder.Entity<OrderLine>().ToTable("OrderLines");
         }
 
 

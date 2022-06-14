@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -22,10 +23,11 @@ namespace WarehouseAPI.Controllers
         }
 
         // GET: api/Addresses
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Address>>> GetAddresses()
         {
-            return await _context.Addresses.ToListAsync();
+            return await _context.Addresses.Include(x => x.Country).ToListAsync();
         }
 
         // GET: api/Addresses/5
@@ -47,12 +49,14 @@ namespace WarehouseAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAddress(int id, Address address)
         {
-            if (id != address.Id)
+            Address address1 = new Address() { Id = id, Street = address.Street, City = address.City, CountryId = address.CountryId };
+
+            if (id != address1.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(address).State = EntityState.Modified;
+            _context.Entry(address1).State = EntityState.Modified;
 
             try
             {

@@ -9,14 +9,11 @@ namespace Warehouse.DAL.Models
     public class User
     {
         public int Id { get; set; }
-        public string UserName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public int AddressId { get; set; }
+        public string Role { get; set; }
 
         public ICollection<Order> Orders { get; set; }
-        public ICollection<Product> Stocks { get; set; }
-        public ICollection<Item> Products { get; set; }
         [NotMapped]
         public string Token { get; set; }
     }

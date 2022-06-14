@@ -24,9 +24,9 @@ namespace Warehouse.DAL.Services
             _warehouseContext = warehouseContext;
         }
 
-        public User Authenticate(string username, string password)
+        public User Authenticate(string email, string password)
         {
-            var user = _warehouseContext.Users.SingleOrDefault(x => x.UserName == username && x.Password == password);
+            var user = _warehouseContext.Users.SingleOrDefault(x => x.Email == email && x.Password == password);
 
             if (user == null)
                 return null;
@@ -38,8 +38,7 @@ namespace Warehouse.DAL.Services
                 Subject = new ClaimsIdentity(new Claim[]
                 {
                     new Claim("UserID", user.Id.ToString()),
-                    new Claim("Email", user.Email),
-                    new Claim("Username", user.UserName)
+                    new Claim("Email", user.Email)
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)

@@ -47,12 +47,19 @@ namespace WarehouseAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPackaging(int id, Packaging packaging)
         {
-            if (id != packaging.Id)
+            Packaging packaging1 = new Packaging()
+            {
+                Id = id,
+                Type = packaging.Type,
+                Weight = packaging.Weight
+            };
+
+            if (id != packaging1.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(packaging).State = EntityState.Modified;
+            _context.Entry(packaging1).State = EntityState.Modified;
 
             try
             {

@@ -11,6 +11,6 @@ namespace Warehouse.DAL.Models
         public string Type { get; set; }
         public int Weight { get; set; }
 
-        public ICollection<Product> Products { get; set; }
+        public ICollection<OrderLine> OrderLines { get; set; }
     }
 }

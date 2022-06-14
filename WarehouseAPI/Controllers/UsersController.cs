@@ -28,7 +28,7 @@ namespace WarehouseAPI.Controllers
         [HttpPost("authenticate")]
         public IActionResult Authenticate([FromBody]User userParam)
         {
-            var user = _userService.Authenticate(userParam.UserName, userParam.Password);
+            var user = _userService.Authenticate(userParam.Email, userParam.Password);
 
             if (user == null)
                 return BadRequest(new { message = "Username or password is incorrect" });
@@ -37,7 +37,6 @@ namespace WarehouseAPI.Controllers
         }
 
         // GET: api/Users
-        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
@@ -63,12 +62,17 @@ namespace WarehouseAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, User user)
         {
-            if (id != user.Id)
+            var userPassword = _context.Users.Find(id);
+
+            userPassword.Role = user.Role;
+            userPassword.Email = user.Email;
+
+            if (id != userPassword.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(user).State = EntityState.Modified;
+            _context.Entry(userPassword).State = EntityState.Modified;
 
             try
             {

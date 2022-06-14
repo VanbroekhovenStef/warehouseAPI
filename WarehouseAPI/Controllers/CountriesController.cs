@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,7 @@ namespace WarehouseAPI.Controllers
         }
 
         // GET: api/Countries
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Country>>> GetCountries()
         {
@@ -47,12 +49,9 @@ namespace WarehouseAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCountry(int id, Country country)
         {
-            if (id != country.Id)
-            {
-                return BadRequest();
-            }
+            Country country1 = new Country { Id = id, Name = country.Name, MaxWeight = country.MaxWeight};
 
-            _context.Entry(country).State = EntityState.Modified;
+            _context.Entry(country1).State = EntityState.Modified;
 
             try
             {

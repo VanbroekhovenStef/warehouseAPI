@@ -47,12 +47,19 @@ namespace WarehouseAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutOrder(int id, Order order)
         {
-            if (id != order.Id)
+            DateTime date = new DateTime();
+
+            Order order1 = new Order()
+            {
+                Id = id, AddressId = order.AddressId, UserId = order.UserId, OrderPlaced = date, Confirm = false
+            };
+
+            if (id != order1.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(order).State = EntityState.Modified;
+            _context.Entry(order1).State = EntityState.Modified;
 
             try
             {
